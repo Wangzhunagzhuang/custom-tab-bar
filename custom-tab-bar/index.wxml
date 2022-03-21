@@ -1,0 +1,10 @@
+<!--components/custom-tab-bar/index.wxml-->
+<view class="tab-bar" wx:if="{{show}}" style='height:{{isIphoneX?166:100}}rpx;'>
+    <view class="tab-bar-item" wx:for="{{list}}" wx:key="index" bindtap="tab" data-path="{{item.pagePath}}" data-index="{{index}}">
+      <image wx:if="{{index == 1}}" class="item_image_actuve" src="{{selected === index ? item.selectedIconPath : item.iconPath}}"></image>
+      <view class="tab-bar-item-else" wx:else>
+        <image class="item_image" src="{{selected === index ? item.selectedIconPath : item.iconPath}}"></image>
+        <view class=" {{selected==index?'tabbar_active':''}}">{{item.text}}</view>
+      </view>
+    </view>
+</view>
